@@ -83,7 +83,7 @@ class Train
   end
 
   def last_station
-    if @index == 0
+    if @index.zero?
       puts 'Конечной станции нет'
     else
       @last_train_station = @train_route[@index - 1]

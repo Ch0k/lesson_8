@@ -33,7 +33,6 @@ class RailRoad
       when 4
         create_wagon
       end
-
     when 2
       puts 'Выберите 1 Назначать маршрут поезду'
       puts 'Выберите 2 Добавить вагон поезду'
