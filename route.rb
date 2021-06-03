@@ -1,13 +1,18 @@
+# frozen_string_literal: true
+
+# Class for create route objects
 class Route
   include InstanceCounter
-  @@all = []
 
+  # rubocop:disable Style/ClassVars
+  @@all = []
   def initialize(first_station, last_station)
     @first_station = first_station
     @last_station = last_station
     @stations = [first_station, last_station]
     @@all << self
   end
+  # rubocop:enable Style/ClassVars
 
   def self.all
     @@all

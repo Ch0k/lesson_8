@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Class for create wagon type cargo
 class CargoWagon < Wagon
   attr_reader :type
   attr_accessor :quantity, :place

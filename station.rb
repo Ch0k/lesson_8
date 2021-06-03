@@ -1,19 +1,22 @@
+# frozen_string_literal: true
+
+# Class for create station object
 class Station
   include InstanceCounter
 
-  NAME_FORMAT = /.+/
+  NAME_FORMAT = /.+/.freeze
 
   attr_reader :name, :trains
 
+  # rubocop:disable Style/ClassVars
   @@all = []
-
   def initialize(name)
     @name = name
     @trains = []
     validate!
     @@all << self
-    register_instance
   end
+  # rubocop:enable Style/ClassVars
 
   def valid?
     validate!
@@ -38,7 +41,7 @@ class Station
     @trains.delete(train)
   end
 
-  def self.all
+  def self.print_all
     @@all.each_with_index { |station, index| puts "#{index}: Станция #{station.name}" }
   end
 

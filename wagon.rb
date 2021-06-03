@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Class for create wagon
 class Wagon
   include Company
 

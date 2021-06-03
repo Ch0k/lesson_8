@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Class for create train object
 class Train
   include Company
   include InstanceCounter
@@ -5,10 +8,10 @@ class Train
   attr_accessor :speed
   attr_reader :number, :type
 
-  NUMBER_FORMAT = /^[\d\w]{3}-?[\d\w]{2}$/
+  NUMBER_FORMAT = /^[\d\w]{3}-?[\d\w]{2}$/.freeze
+  # rubocop:disable Style/ClassVars
 
   @@all = []
-
   def initialize(number)
     @number = number
     @wagons = []
@@ -16,6 +19,7 @@ class Train
     register_instance
     @@all << self
   end
+  # rubocop:enable Style/ClassVars
 
   def each_wagon(&block)
     @wagons.each(&block)
